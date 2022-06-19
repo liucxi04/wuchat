@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../luwu/http/http-parser/http_parser.h
+stddef.h
+-
+BaseTsd.h
+-
+stdint.h
+-
+
+../luwu/http/http.h
+memory
+-
+string
+-
+map
+-
+http-parser/http_parser.h
+../luwu/http/http-parser/http_parser.h
+boost/lexical_cast.hpp
+-
+
+/home/liucxi/Documents/chat_luwu/luwu/tests/test_http.cpp
+iostream
+-
+luwu/http/http.h
+/home/liucxi/Documents/chat_luwu/luwu/tests/luwu/http/http.h
+

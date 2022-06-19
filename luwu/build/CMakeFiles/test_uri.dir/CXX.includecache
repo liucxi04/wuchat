@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../luwu/address.h
+memory
+-
+string
+-
+vector
+-
+iostream
+-
+sys/socket.h
+-
+sys/types.h
+-
+sys/un.h
+-
+arpa/inet.h
+-
+map
+-
+
+../luwu/uri.h
+memory
+-
+address.h
+../luwu/address.h
+
+/home/liucxi/Documents/chat_luwu/luwu/tests/test_uri.cpp
+luwu/uri.h
+/home/liucxi/Documents/chat_luwu/luwu/tests/luwu/uri.h
+iostream
+-
+

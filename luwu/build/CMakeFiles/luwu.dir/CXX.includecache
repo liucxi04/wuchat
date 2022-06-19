@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../luwu/ext.h
+string
+-
+vector
+-
+iostream
+-
+
+../luwu/utils.h
+sys/types.h
+-
+sys/time.h
+-
+string
+-
+vector
+-
+byteswap.h
+-
+
+/home/liucxi/Documents/chat_luwu/luwu/luwu/util/json_util.cpp
+json_util.h
+/home/liucxi/Documents/chat_luwu/luwu/luwu/util/json_util.h
+luwu/utils.h
+/home/liucxi/Documents/chat_luwu/luwu/luwu/util/luwu/utils.h
+luwu/ext.h
+/home/liucxi/Documents/chat_luwu/luwu/luwu/util/luwu/ext.h
+
+/home/liucxi/Documents/chat_luwu/luwu/luwu/util/json_util.h
+string
+-
+iostream
+-
+json/json.h
+-
+

@@ -1,0 +1,6 @@
+servers:
+    - address: ["0.0.0.0:8099", "127.0.0.1:8098"]
+      keepalive: 1
+      timeout: 1000
+      name: luwu/1.1
+      type: http

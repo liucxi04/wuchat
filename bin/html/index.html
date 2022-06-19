@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>chat room</title>
+	</head>
+
+	<script type="text/javascript">
+		var websocket = null;
+
+		function login() {
+			websocket = new WebSocket("ws://192.168.179.131:8072/sylar/chat");
+
+			websocket.onerror = function () {
+				writemsg("error");
+			}
+			websocket.onopen = function () {
+				var o = {}
+				o.type = "login_request"
+				o.name = document.getElementById('name').value;
+				websocket.send(JSON.stringify(o));
+			}
+			websocket.onmessage = function (e) {
+				var o = JSON.parse(e.data)
+				if (o.type == "user_center") {
+					writemsg("[" + o.time + "] [" + o.name + "] 加入聊天室")
+				} else if (o.type == "user_leave") {
+					writemsg("[" + o.time + "] [" + o.name + "] 离开聊天室")
+				} else if (o.type == "msg") {
+					writemsg("[" + o.time + "] [" + o.name + "] " + o.msg)
+				} else if (o.type == "login_response") {
+					writemsg("[" + o.result + "] [" + o.msg + "]")
+				}
+			}
+			websocket.onclose = function () {
+				writemsg("close");
+			}
+		}
+
+		function writemsg(msg) {
+			document.getElementById('message').innerHTML += msg + "<br/>"
+		}
+		function sendmsg() {
+
+			var o = {}
+			o.type = "send_request"
+			o.msg = document.getElementById('msg').value;
+			websocket.send(JSON.stringify(o));
+		}
+	</script>
+
+	<body>
+		昵称:<input id="name" type="text"/><button onclick="login()">登录</button><br/>
+		聊天信息:<input id ="msg" type="text"/><button onclick="sendmsg()">发送</button><br/>
+		<div id="message">
+		</div>
+	</body>
+</html>

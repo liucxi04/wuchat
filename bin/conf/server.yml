@@ -1,0 +1,10 @@
+servers:
+    - address: ["0.0.0.0:8090", "127.0.0.1:8091", "/tmp/test.sock"]
+      keepalive: 1
+      timeout: 1000
+      name: sylar/1.1
+      type: http
+    - address: ["0.0.0.0:8072", "0.0.0.0:8071"]
+      timeout: 1000
+      name: sylar-ws/1.0
+      type: ws

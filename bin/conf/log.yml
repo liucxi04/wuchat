@@ -1,0 +1,15 @@
+logs:
+  - name: root
+    level: INFO
+    appenders:
+      - type: StdoutLogAppender
+        pattern: "%d{%Y-%m-%d %H:%M:%S}%T[%rms]%T%t%T%n%T%b%T[%p]%T[%c]%T%f:%l%T%m%N"
+  - name: system
+    level: INFO
+    appenders:
+      - type: StdoutLogAppender
+  - name: http
+    level: DEBUG
+    appenders:
+      - type: StdoutLogAppender
+        pattern: "%f:%l%T%m%n"
